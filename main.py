@@ -7,7 +7,6 @@ kontak1 = {"nama":"anwar","HP":"0829130814","email":"anwarIB@gmail.com"}
 kontak2 = {"nama":"Kevin","HP":"912390410","email":"Kevin@gmail.com"}
 kontak = [kontak1, kontak2]
 
-
 while True:
   print("="*50)
   print("1. Melihat Semua Kontak")
@@ -47,11 +46,14 @@ while True:
       print("Kontak yang tersedia")
       for num,i in enumerate(kontak,start=1):
         print(f'{num}. {i["nama"]}, ({i["HP"]}, {i["email"]})')
-        i_hapus = int(input("Masukkan pilihan kontak yang ingin di hapus :"))
-        del kontak[i_hapus-1]
-        print("\nKontak yang dipilih telah berhasil di hapus !\n")
     else:
       print("kontak masih kosong !\n")
+      continue
+    
+    i_hapus = int(input("Masukkan pilihan kontak yang ingin di hapus :"))
+    del kontak[i_hapus-1]
+    print("\nKontak yang dipilih telah berhasil di hapus !\n")
+
       
   elif pilihan == '4':
     # keluar dari kontak
