@@ -1,0 +1,8 @@
+print("="*50)
+print("Management Kontak".center(50))
+print("Menu Utama".center(50))
+print("="*50)
+print("1. Melihat Semua Kontak")
+print("2. Menambahkan Kontak Baru")
+print("3. Menghapus Kontak")
+print("4. Keluar Dari Kontak")
