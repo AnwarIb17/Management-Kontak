@@ -1,3 +1,34 @@
+def melihat_kontak():
+  #melihat semua kontak
+    if kontak:
+      print("\n")
+      for num,i in enumerate(kontak,start=1):
+        print(f'{num}. {i["nama"]}, ({i["HP"]}, {i["email"]})')
+      print("\n")
+    else:
+      print("kontak masih kosong !")
+      return 1
+      
+def menambah_kontak():
+  # menambah kontak
+    nama = input("Masukkan nama kontak baru       :")
+    HP = input("Masukkan NO HP kontak baru      :")
+    email = input("Masukkan email dari kontak baru :")
+    kontak_baru = {"nama":nama, "HP":HP, "email":email}
+    kontak.append(kontak_baru)
+    
+    print(f"\nkontak baru berhasil di tambahkan !")
+    print("\n")
+    
+def menghapus_kontak():
+  # menghapus kontak
+    if melihat_kontak() == 1:
+      return
+    else:
+      i_hapus = int(input("Masukkan pilihan kontak yang ingin di hapus :"))
+      del kontak[i_hapus-1]
+      print("\nKontak yang dipilih telah berhasil di hapus !\n")
+
 print("="*50)
 print("Management Kontak".center(50))
 print("Menu Utama".center(50))
@@ -18,41 +49,13 @@ while True:
   pilihan = input("\nMasukkan pilihan anda (1,2,3,4) :")
 
   if pilihan == '1':
-    #melihat semua kontak
-    if kontak:
-      print("\n")
-      for num,i in enumerate(kontak,start=1):
-        print(f'{num}. {i["nama"]}, ({i["HP"]}, {i["email"]})')
-      print("\n")
-    else:
-      print("kontak masih kosong !")
+    melihat_kontak()
     
   elif pilihan == '2':
-    # menambah kontak
-    nama = input("Masukkan nama kontak baru       :")
-    HP = input("Masukkan NO HP kontak baru      :")
-    email = input("Masukkan email dari kontak baru :")
-    kontak_baru = {"nama":nama, "HP":HP, "email":email}
-    kontak.append(kontak_baru)
-    
-    print(f"\nkontak baru berhasil di tambahkan !")
-    print("\n")
+    menambah_kontak()
     
   elif pilihan == '3':
-    # menghapus kontak
-    print("\n")
-    
-    if kontak :
-      print("Kontak yang tersedia")
-      for num,i in enumerate(kontak,start=1):
-        print(f'{num}. {i["nama"]}, ({i["HP"]}, {i["email"]})')
-    else:
-      print("kontak masih kosong !\n")
-      continue
-    
-    i_hapus = int(input("Masukkan pilihan kontak yang ingin di hapus :"))
-    del kontak[i_hapus-1]
-    print("\nKontak yang dipilih telah berhasil di hapus !\n")
+    menghapus_kontak()
 
       
   elif pilihan == '4':
